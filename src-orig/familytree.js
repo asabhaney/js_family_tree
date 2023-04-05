@@ -1,3 +1,9 @@
+// =========================================================================================@@
+// Last Updated Date: Jun 5, 2022
+// Last Updated By: ajay
+// Status Level: 1-4
+// ===========================================================================================
+
 // extend javascript array class by a remove function
 // copied from https://stackoverflow.com/a/3955096/12267732
 Array.prototype.remove = function() {
@@ -42,6 +48,8 @@ class FTDataHandler {
 
             // make dag from edge list
             this.dag = d3.dagConnect()(data.links);
+
+            console.log(this.dag)
 
             // dag must be a node with id undefined. fix if necessary
             if (this.dag.id != undefined) {
@@ -365,7 +373,9 @@ class Union extends FTNode {
         if (!this.data.children.includes(person.id)) this.data.children.push(person.id);
         if (!this._childLinkData.includes([this.id, person.id])) this._childLinkData.push([this.id, person.id]);
         // make union visible
+        // this._children.push(person)
         this.show_child(person);
+        console.log(person)
         return person;
     }
 
@@ -541,7 +551,7 @@ class Person extends FTNode {
         }
         union.data = union_data;
         this.ft_datahandler.nodes.push(union);
-        // make sure union lists this person as a partner        
+        // make sure union lists this person as a partner
         if (!union_data.partner.includes(this.id)) union_data.partner.push(this.id);
         // make sure this person lists union as own_union
         if (!this.data.own_unions.includes(union.id)) this.data.own_unions.push(union.id);

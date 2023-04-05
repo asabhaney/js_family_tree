@@ -4,7 +4,7 @@
 // Status Level: 1-4
 // ===========================================================================================
 
-data = {
+export default {
     "start":"id4",
     "persons": {
         "id1": { "id": "id1", "name": "Adam", "birthyear": 1900, "deathyear": 1980, "own_unions": ["u1"], "birthplace":"Alberta", "deathplace":"Austin"},

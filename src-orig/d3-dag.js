@@ -1,3 +1,9 @@
+// =========================================================================================@@
+// Last Updated Date: Jun 5, 2022
+// Last Updated By: ajay
+// Status Level: 1-4
+// ===========================================================================================
+
 // d3-dag Version 0.3.4-edited. Copyright 2020 undefined.
 // Change compared to d3-dag Version 0.3.4:
 // - add exports.dagNode
@@ -2630,13 +2636,13 @@
         // without changing the whole algorithm (fewer cycles)
         //
         // 1.) For every row but the pivot row
-        // 2.) Update each column to 
+        // 2.) Update each column to
         //    a.) itself
         //        less
         //    b.) active-row's pivot column
         //        times
         //    c.) whatever-the-hell this is: nonZeroColumns[i]
-        // 
+        //
         // //////////////////////////////////////
         // console.time("step-2");
         for (var r = 0; r <= lastRow; r++) {
